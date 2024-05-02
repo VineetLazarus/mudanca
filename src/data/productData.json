@@ -1,0 +1,13 @@
+{
+    "products":[
+        { "Name": "Daily Journal", "Eimg": "assets/products/j1.jpg", "Category": "Journals", "Country": "India" },
+        { "Name": "Wellness Journal", "Eimg": "assets/products/j2.jpg", "Category": "Journals", "Country": "India" },
+        { "Name": "Gratitude Journal", "Eimg": "assets/products/j3.jpg", "Category": "Journals", "Country": "India" },
+        { "Name": "Wellness Cards", "Eimg": "assets/products/wellcards.jpg", "Category": "Cards", "Country": "India" },
+        { "Name": "Family Games", "Eimg": "assets/products/fcg.jpg", "Category": "Games", "Country": "India" },
+        { "Name": "Productivity Planners", "Eimg": "assets/products/prodplan.jpg", "Category": "Planners", "Country": "India" },
+        { "Name": "Travel Planners", "Eimg": "assets/products/trp.jpg", "Category": "Planners", "Country": "India" },
+        { "Name": "Weekly Planners", "Eimg": "assets/products/wkp.jpg", "Category": "Planners", "Country": "India" },
+        { "Name": "Desk Planners", "Eimg": "assets/products/dp.jpg", "Category": "Planners", "Country": "India" }
+    ]
+}
