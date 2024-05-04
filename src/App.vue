@@ -33,6 +33,7 @@ export default {
   font-family: "Urbanist", sans-serif !important;
   font-optical-sizing: auto;
   font-style: normal;
+  overflow: hidden;
 }
 
 .e-control {

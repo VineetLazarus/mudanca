@@ -66,7 +66,7 @@ export default {
 <style scoped>
 
 .control-container {
-  height: 740px;
+  height: 100%;
   margin: 0 auto;
   width: 100%;
 }
