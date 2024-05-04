@@ -13,9 +13,11 @@
     </div>
   </ejs-appbar>
   <div class="page-container">
-    <div v-if="showMenu" class="menuContainer">
-      <menu-page />
-    </div>
+    <transition name="fade">
+      <div v-if="showMenu" class="menuContainer">
+        <menu-page />
+      </div>
+    </transition>
     <corousel/>
   </div>
 </template>
@@ -125,11 +127,19 @@ methods: {
 .menuDiv {
   padding-top:10px;
   order: 1;
+  min-width: 45px;
 }
 
 .menuicon{
   margin-left: 1rem;
   cursor: pointer;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 1s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
 }
 
 @media (max-width: 635px) {

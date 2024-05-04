@@ -91,24 +91,23 @@ export default {
 
 <style>
 
-.e-content {
+.menuContainer .e-content {
     background-color: #ffffff !important;
-    margin: 2% 2% 0% 2%;
-    border-radius: 50px;
+    margin: 1% 1% 0% 1%;
+    border-radius: 25px 25px 25px 25px;
     height: 90% !important;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 }
 
-.e-item {
-    border-radius: 50px 50px 0px 0px;
+.menuContainer .e-item {
+    border-radius: 25px 25px 25px 25px;
 }
 
-.e-tab .e-tab-header .e-toolbar-item .e-tab-text {
+.menuContainer .e-tab .e-tab-header .e-toolbar-item .e-tab-text {
     font-family: inherit !important;
     font-weight: bold !important;
-}
-
-.e-tab-text {
     color: #010101;
+    font-size: 0.9rem;
 }
 
 
