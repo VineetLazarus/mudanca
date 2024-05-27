@@ -1,11 +1,8 @@
 <template>
 <div>
     <div class="control-section">
-        <div class="searchIcon">
-            <font-awesome-icon :icon="['fas', 'magnifying-glass']" />
-        </div>
         <div id='content' style="margin: 0px auto; width:300px; padding-top: 10px;">
-            <ejs-autocomplete id='employees' :dataSource='data' :fields='fields' :placeholder='watermark'
+            <ejs-autocomplete id='employees' :dataSource='data' :fields='fields' :placeholder='watermark' @close="onSearchClose"
              :headerTemplate="'hTemplate'" :itemTemplate="'iTemplate'" popupHeight="450px" cssClass='autocomplete-template'>
               <template v-slot:hTemplate="{}">
                 <!--<div class="header"> <span>Image</span> <span class="info">Product Info</span></div>-->
@@ -37,6 +34,11 @@ export default {
             watermark: 'e.g. Weekly Planner',
             data: data['products']
         };
+    },
+    methods: {
+        onSearchClose() {
+            this.$emit('onSearchClose')
+        }
     }
 }
 </script>

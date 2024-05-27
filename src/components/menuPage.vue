@@ -4,7 +4,6 @@
             <e-tabitems>
                 <e-tabitem :header='headerText0' :content="content0"></e-tabitem>
                 <e-tabitem :header='headerText1' :content="content1"></e-tabitem>
-                <e-tabitem :header='headerText2' :content="content2"></e-tabitem>
                 <e-tabitem :header='headerText3' :content="content3"></e-tabitem>
                 <e-tabitem :header='headerText4' :content="content4"></e-tabitem>
                 <e-tabitem :header='headerText5' :content="content5"></e-tabitem>
@@ -31,14 +30,12 @@ export default {
           placeFields: { text: 'position', value: 'id' },
           value: 'Scrollable',
           placeValue: 'top',
-          headerText0: { text: 'Login/Register' },
-          headerText1: { text: 'New Launch' },
-          headerText2: { text: 'All Products' },
-          headerText3: { text: 'Categories' },
-          headerText4: { text: 'Best Seller' },
-          headerText5: { text: 'Customer Reviews' },
-          headerText6: { text: 'Community' },
-          headerText7: { text: 'About Us' },
+          headerText0: { text: 'New Launch' },
+          headerText1: { text: 'Categories' },
+          headerText2: { text: 'Best Seller' },
+          headerText3: { text: 'Testimonials' },
+          headerText4: { text: 'Blog' },
+          headerText5: { text: 'About Us' },
           content0: 'HyperText Markup Language, commonly referred to as HTML, is the standard markup language used to ' +
         'create web pages. Along with CSS, and JavaScript, HTML is a cornerstone technology, used by most websites to create visually ' +
         'engaging web pages, user interfaces for web applications, and user interfaces for many mobile applications. Web ' +
@@ -93,9 +90,9 @@ export default {
 
 .menuContainer .e-content {
     background-color: #ffffff !important;
-    margin: 1% 1% 0% 1%;
+    margin: 3% 1% 0% 1%;
     border-radius: 25px 25px 25px 25px;
-    height: 90% !important;
+    height: 88% !important;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 }
 
@@ -103,11 +100,43 @@ export default {
     border-radius: 25px 25px 25px 25px;
 }
 
+ .menuContainer .e-toolbar-item {
+    background-color: #ffffff !important;
+    border-radius: 50px !important;
+    min-width: 130px !important;
+    margin: 10px !important;
+    font-size: 1rem !important;
+}
+
+
+.menuContainer .e-tab .e-tab-header .e-toolbar-item.e-active {
+    margin-top: 0px !important;
+    border-radius: 0px 0px 15px 15px !important;
+}
+
+.e-tab .e-tab-header .e-toolbar-item .e-tab-wrap:hover {
+    border-radius: 50px !important;
+    line-height: 40px !important;
+    height: 40px !important;
+}
+
+.menuContainer .e-tab .e-tab-header:not(.e-vertical) .e-indicator {
+    height: 5px !important;
+}
+
 .menuContainer .e-tab .e-tab-header .e-toolbar-item .e-tab-text {
     font-family: inherit !important;
     font-weight: bold !important;
     color: #010101;
     font-size: 0.9rem;
+}
+
+@media (max-width: 635px) {
+    .menuContainer .e-content {
+        margin: 30% 1% 0% 1%;
+        border-radius: 25px 25px 0px 0px;
+        height: 78% !important;
+    }
 }
 
 

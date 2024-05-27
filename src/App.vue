@@ -45,6 +45,10 @@ export default {
   font-style: normal;
 }
 
+.el-drawer__body{
+  padding: 5px !important;
+}
+
 .buttons {
   background-color: #020202 !important;
 }

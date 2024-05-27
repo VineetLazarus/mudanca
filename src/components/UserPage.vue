@@ -1,23 +1,30 @@
 <template>
   <ejs-appbar class="page-header">
     <div class="flex-container">
-      <div class="logoDiv"><img src="../assets/tlogo.png" alt="Cardinal" style="height:3rem; width: 10rem" /></div>
-      <div class="searchBox"><search /></div>
       <div class="menuDiv" >
-        <font-awesome-icon :icon="['fas', (!showMenu ?'bars': 'xmark')]" class="menuicon" size="2x" @click="openMenu"/>
-        <!--<ejs-button isPrimary="true" cssClass="buttons">
-          <font-awesome-icon :icon="['far', 'user']" />
-          Login
-        </ejs-button>-->
+          <font-awesome-icon :icon="['fas', (!showMenu ?'bars': 'xmark')]" class="menuicon" size="2x" @click="openMenu"/>
+      </div>
+      <div class="logoDiv">
+        <img src="../assets/tplogo.png" alt="Cardinal" 
+        style="height: 2rem;
+            width: 12rem;
+            margin-top: 10px;" />
+      </div>
+      <div class="iconMenuBox">
+        <font-awesome-icon :icon="['fas', 'magnifying-glass']" class="iconMenu" @click="openSearch"/>
+        <font-awesome-icon :icon="['far', 'heart']" class="iconMenu"/>
+        <font-awesome-icon :icon="['fas', 'cart-shopping']" class="iconMenu"/>
+        <font-awesome-icon :icon="['far', 'user']" class="iconMenu"/>
       </div>
     </div>
   </ejs-appbar>
+  <el-drawer v-model="drawer" title="I am the title" size="300" :with-header="false">
+    <search @onSearchClose="onSearchClose"/>
+  </el-drawer>
   <div class="page-container">
-    <transition name="fade">
-      <div v-if="showMenu" class="menuContainer">
+      <div v-if="showMenu" :class="('menuContainer '+(showMenu ? 'open' : 'close'))">
         <menu-page />
       </div>
-    </transition>
     <corousel/>
   </div>
 </template>
@@ -40,12 +47,14 @@ export default {
     //'product': product,
    // 'pageFooter': pageFooter,
     'search': searchBoxVue,
-    // 'ejs-button': ButtonComponent
+    //'ejs-button': ButtonComponent,
     'menu-page': menuPage
   },
   data() {
   return {
     showMenu: false,
+    showSearch: false,
+    drawer: false,
     items: [
                 {
                     title: 'Cut',
@@ -71,6 +80,13 @@ export default {
 methods: {
   openMenu() {
     this.showMenu = !this.showMenu
+  },
+  openSearch() {
+   // this.showSearch = !this.showSearch
+    this.drawer = true
+  },
+  onSearchClose() {
+    this.drawer = false
   }
 }
 }
@@ -81,19 +97,22 @@ methods: {
 
 .e-appbar {
     padding: 0px;
+    box-shadow: none;
+    background: transparent !important;
 }
 
 .page-header{
     height: 6vh;
     width: 100%;
-    position: relative;
+    position: absolute;
+    z-index: 1000;
     border: 0px !important;
 }
 
 .page-container {
     position: relative;
     width: 100%;
-    height: 94vh;
+    height: 100vh;
 }
 
 .menuContainer {
@@ -101,7 +120,40 @@ methods: {
   width: 100%;
   height: 100%;
   z-index: 10;
-  background-color: hsl(208, 100%, 97%,0.7);
+  margin-top: 0%;
+}
+
+.menuContainer .open {
+  animation: 1s slide-up;
+}
+
+.menuContainer .close {
+  animation: 1s slide-down;
+}
+
+@keyframes slide-up {
+  from {
+    margin-top: 100%;
+    height: 300%;
+  }
+  to {
+    margin-top: 0%;
+    height: 100%;
+    /*background-color: hsl(208, 100%, 97%,0.7);*/
+  }
+}
+
+@keyframes slide-down {
+  from {
+    margin-top: 0%;
+    height: 100%;
+    
+  }
+  to {
+    margin-top: 100%;
+    height: 300%;
+    /*background-color: hsl(208, 100%, 97%,0.7);*/
+  }
 }
 
 
@@ -111,36 +163,39 @@ methods: {
   justify-content: space-between;
 }
 
-.logoDiv {
-  max-width: 250px;
-  max-height: 100px;
-  padding-left: 10rem;
-  flex-shrink:0;
-  order: 2;
-}
-
-.searchBox {
-  order: 3;
-  padding-right: 1rem;
-}
-
 .menuDiv {
   padding-top:10px;
   order: 1;
   min-width: 45px;
 }
 
+.logoDiv {
+  max-width: 250px;
+  max-height: 100px;
+  padding-left: 5rem;
+  flex-shrink:0;
+  order: 2;
+}
+
+.iconMenuBox {
+  order: 3;
+  padding-right: 1rem;
+  padding-top: 0.55rem;
+  position: relative;
+}
+
+.iconMenu {
+  height: 22px;
+  padding: 0px 15px 0px 0px;
+  font-size: 4rem;
+}
+
+
 .menuicon{
   margin-left: 1rem;
   cursor: pointer;
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 1s;
-}
-.fade-enter, .fade-leave-to {
-  opacity: 0;
-}
 
 @media (max-width: 635px) {
   .flex-container {
@@ -149,16 +204,12 @@ methods: {
   .page-header{
       height: 13vh;
   }
-
-  .page-container {
-      height: 87vh;
-  }
   .logoDiv {
     max-width: 200px;
     max-height: 60px;
     padding-left: 1rem;
   }
-  .searchBox {
+  .iconMenuBox {
     order: 3;
     padding-left: 1rem;
   }

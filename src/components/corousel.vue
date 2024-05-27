@@ -13,7 +13,7 @@
         <e-carousel-item template="kingfisher"></e-carousel-item>
         <template v-slot:kingfisher>
           <figure class="img-container">
-            <img src="../assets/products/j2.jpg" alt="kingfisher"
+            <img src="../assets/products/wkp.jpg" alt="kingfisher"
               style="height: 100%; width: 100%" />
             <figcaption class="img-caption">Productivity Tracker</figcaption>
           </figure>
@@ -21,7 +21,7 @@
         <e-carousel-item template="keel-billed-toucan"></e-carousel-item>
         <template v-slot:keel-billed-toucan>
           <figure class="img-container">
-            <img src="../assets/products/wkp.jpg" alt="keel-billed-toucan"
+            <img src="../assets/products/j1.jpg" alt="keel-billed-toucan"
               style="height: 100%; width: 100%" />
             <figcaption class="img-caption">Weekly Planner</figcaption>
           </figure>
@@ -29,7 +29,7 @@
         <e-carousel-item template="yellow-warbler"></e-carousel-item>
         <template v-slot:yellow-warbler>
           <figure class="img-container">
-            <img src="../assets/products/trp.jpg" alt="yellow-warbler"
+            <img src="../assets/products/wkp.jpg" alt="yellow-warbler"
               style="height: 100%; width: 100%" />
             <figcaption class="img-caption">Travell Planner</figcaption>
           </figure>
@@ -37,7 +37,7 @@
         <e-carousel-item template="bee-eater"></e-carousel-item>
         <template v-slot:bee-eater>
           <figure class="img-container">
-            <img src="../assets/products/dp.jpg" alt="bee-eater"
+            <img src="../assets/products/j1.jpg" alt="bee-eater"
               style="height: 100%; width: 100%" />
             <figcaption class="img-caption">Daily Planner</figcaption>
           </figure>
